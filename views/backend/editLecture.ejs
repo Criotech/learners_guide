@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('../partials/dashboard-head', {pagename: 'Add/Edit Lecture'}) %>
+</head>
+
+<body>
+    <%- include('../partials/dashboard-nav') %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('../partials/sidebar.ejs', {page: 'Lecture'}) %>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
+                   <h1 class="h2 rw"><%= (typeof action != 'undefined') ? 'Edit' : 'Create' %> Page Content: <span class="text-info">Lecture</span></h1>
+                </div>
+
+                <form action="/dashboard/lectures/edit/<%=result.id%>" method="post" enctype="multipart/form-data" class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+
+                    <%- include('../fields/text', { fieldname: 'title', fieldlabel: 'Lecture Title', valueField: (typeof result != 'undefined') ? result.title : '' }); %>
+
+                    <hr class="my-4"/>
+                    <%- include('../fields/file', { fieldname: 'postImage', fieldlabel: 'Lecture Image', valueField: (typeof result != 'undefined') ? result.LectureImage : '' }); %>
+
+                    
+                    <hr class="my-4"/>
+                    <%- include('../fields/text', { fieldname: 'link', fieldlabel: 'Lecture Link', valueField: (typeof result != 'undefined') ? result.link : '' }); %>
+                   
+                    <hr class="my-4"/>
+                    <%- include('../fields/textarea', { fieldname: 'introduction', fieldId: 'summary', fieldlabel: 'Introduction', valueField: (typeof result != 'undefined') ? result.introduction : '' }); %>
+
+                    <hr class="my-4"/>
+                    <%- include('../fields/textarea', { fieldname: 'prerequisites', fieldId: 'meta_desc', fieldlabel: 'Prerequisites', valueField: (typeof result != 'undefined') ? result.prerequisites : '' }); %>
+                    
+                    <hr class="my-4"/>
+                    <%- include('../fields/textarea', { fieldname: 'content', fieldId: 'content', fieldlabel: 'Content', valueField: (typeof result != 'undefined') ? result.content : '' }); %>
+
+                    <hr class="my-4"/>
+                    <%- include('../fields/radio', { fieldname: 'is_visible', fieldlabel: 'Is Published', valueField: (typeof result != 'undefined') ? result.is_visible : 1 }); %>
+
+                    <hr class="my-4"/>
+                    <div class="col-sm-10 ml-md-auto px-0">
+                        <%- include('../fields/button', { fieldvalue: (typeof action != 'undefined') ? 'UPDATE Lecture' : 'CREATE LECTURE' }); %>
+                        <a href="/dashboard/Lecture" class="btn btn-success pull-right"><i class="fa fa-caret-left pr-2"> </i>Back to List</a>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <%- include('../partials/dashboard-scripts') %>
+    <script type="text/javascript">
+        CKbasic('summary');
+        CKfull('content');
+        CKbasic('meta_desc');
+    </script>
+</body>
+</html>

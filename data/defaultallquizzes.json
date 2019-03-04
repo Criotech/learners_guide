@@ -1,0 +1,88 @@
+[
+          {
+        "id": 1,
+        "title": "History of Computers",
+        "description": "Questions asked on the topic history of computers ",
+        "meta_tags": [
+            "history of computers "
+        ],
+        "difficulty": "Average ",
+        "questions": [
+            {
+                "text": "What was the name of first computer designed by Charlse Babbage?",
+                "answers": [
+                    "Analytical Engine",
+                    "Difference Engine",
+                    " Colossus",
+                    "ENIAC"
+                ],
+                "correct_answer": 1,
+                "global_correct": 0,
+                "global_total": 2,
+                "meta_tags": [
+                    "history of computers"
+                ]
+            },
+            {
+                "text": "Which was the first electronics digital programmable computing device ? ",
+                "answers": [
+                    " Analytical Engine ",
+                    " Difference Engine",
+                    " Colossus",
+                    " ENIAC"
+                ],
+                "correct_answer": 3,
+                "global_correct": 0,
+                "global_total": 2,
+                "meta_tags": [
+                    "history of computers"
+                ]
+            },
+            {
+                "text": "EDSAC stands for __________.",
+                "answers": [
+                    "Electronic Delay Storage Automatic Calculator  ",
+                    " Electronic Delay Storage Automatic Computer ",
+                    "Electronic Data Storage Automatic Calculator",
+                    " Electronic Data Storage Automatic Computer"
+                ],
+                "correct_answer": 0,
+                "global_correct": 1,
+                "global_total": 2,
+                "meta_tags": [
+                    "history of computers"
+                ]
+            },
+            {
+                "text": " EDVAC stands for __________.   ",
+                "answers": [
+                    "Electronic Discrete Variable Automatic Calculator",
+                    " Electronic Discrete Variable Automatic Computer ",
+                    " Electronic Data Variable Automatic Calculator ",
+                    "Electronic Data Variable Automatic Computer"
+                ],
+                "correct_answer": 0,
+                "global_correct": 1,
+                "global_total": 2,
+                "meta_tags": [
+                    "history of computers"
+                ]
+            },
+            {
+                "text": "Which was the first commercial computer?  (ans) ",
+                "answers": [
+                    " Ferranti Mark 1",
+                    "Analytical Engine ",
+                    "Difference Engine ",
+                    " Colossus"
+                ],
+                "correct_answer": 0,
+                "global_correct": 1,
+                "global_total": 2,
+                "meta_tags": [
+                    "history of computers"
+                ]
+            }
+        ]
+    }
+]

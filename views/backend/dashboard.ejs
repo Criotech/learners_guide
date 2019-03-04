@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/dashboard-head') %>
+    </head>
+
+    <body>
+        <%- include('../partials/dashboard-nav') %>
+
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- sidebar -->
+                <%- include('../partials/sidebar.ejs', {page: 'dashboard'}) %>
+
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <h1 class="jumbotron my-5 text-center"> Dashboard</h1>
+                    <div class=" justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom d-none">
+                        <h1 class="h2">Dashboard</h1>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <%- include('../partials/dashboard-scripts') %>
+    </body>
+</html>

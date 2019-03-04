@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('../partials/dashboard-head', {pagename: 'Add/Edit Video'}) %>
+</head>
+
+<body>
+    <%- include('../partials/dashboard-nav') %>
+
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('../partials/sidebar.ejs', {page: 'Video'}) %>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 pb-2 mb-3">
+                   <h1 class="h2 rw">Enroll Student for Test</h1>
+                </div>
+
+                <form action="/dashboard/enrollstudent" method="POST"  class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+
+                    <%- include('../fields/text', { fieldname: 'name', fieldlabel: 'Student Name', valueField: (typeof result != 'undefined') ? result.title : '' }); %>
+
+                    <hr class="my-4"/>
+                    <%- include('../fields/email', { fieldname: 'email', fieldlabel: 'Student Email', valueField: (typeof result != 'undefined') ? result.title : '' }); %>
+                   
+                    <hr class="my-4"/>
+                    <%- include('../fields/text', { fieldname: 'password', fieldlabel: 'Student ID Number', valueField: (typeof result != 'undefined') ? result.title : '' }); %>
+                    
+                    <%- include('../fields/hidden', { fieldname: 'type', valueField: 'STUDENT'}); %>
+                    
+                    <div class="col-sm-10 ml-md-auto px-0">
+                        <%- include('../fields/button', { fieldvalue: (typeof action != 'undefined') ? 'Update Student' : 'Enroll Student' }); %>
+                        <a href="/dashboard" class="btn btn-success pull-right"><i class="fa fa-caret-left pr-2"> </i>Back to dashboard</a>
+                    </div>
+                </form>
+                <br> <br>
+
+                <h3>List of Registered Students</h3> <hr>
+          <table class="table" >
+            <thead class="thead-dark" style="font-weight:bold">
+              <tr>
+                <th scope="col">Student Name</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody style="font-size:15px">
+              <% for(var i=0; i < result.length; i++) { %>
+                <tr>
+                    <td><%= result[i].name%></td>
+                    <td><%= result[i].email %></td>
+                    <td>
+                      <form action="/deletestudent?_method=DELETE" method="POST">
+                        <input type="hidden" name="id" value="<%=result[i]._id%>">
+                        <button type="submit" class="btn btn-dark">Delete</button>
+                      </form>
+                    </td>
+                  </tr>
+                <% } %>
+            </tbody>
+          </table>
+            </main>
+        </div>
+    </div>
+
+    <%- include('../partials/dashboard-scripts') %>
+    <script type="text/javascript">
+        CKbasic('summary');
+        CKfull('content');
+        CKbasic('meta_desc');
+    </script>
+</body>
+</html>

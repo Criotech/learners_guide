@@ -1,0 +1,14 @@
+<div class="form-group row my-3">
+    <label for="<%= fieldname %>" class="col-sm-2 col-form-label"><%= fieldlabel %></label>
+    <div class="col-sm-10 mt-2">
+        <input type="radio" name="<%= fieldname %>" value="1" class="" <%= (valueField == 1) ? 'checked' : '' %> >
+        <label class="mr-5">
+            Yes
+        </label>
+
+        <input type="radio" name= "<%= fieldname %>" value="0" class="" <%= (valueField == 0) ? 'checked' : '' %> >
+        <label class="">
+            No
+        </label>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lessons</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/lessons.css">
+	<link rel="stylesheet" href="css/lessons_res.css">
+
+</head>
+
+<body>
+	<header>
+		<div class="collapse bg-dark" id="navbarHeader">
+			<div class="container">
+
+			</div>
+		</div>
+		</div>
+		<div class="navbar navbar-dark bg-dark shadow-sm">
+			<div class="container d-flex justify-content-between">
+				<a href="#" class="navbar-brand d-flex align-items-center">
+              <i class="fa fa-laptop mr-2" aria-hidden="true"></i>
+            <strong> Learners Guild</strong>
+          </a>
+
+				<span style="font-size: 30px; float: right; color: white"><a style="color: white" href="/"> <i class="fa fa-arrow-left" aria-hidden="true"></i> <span style="font-size: 25px"> Back </span>				</a>
+				</span>
+			</div>
+		</div>
+	</header>
+
+	<!-- Popular -->
+
+	<div class="popular page_section">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1>TOPICS</h1>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="wrapper">
+				<% for(let i=0; i < result.length; i++) { %>
+
+					<!-- Popular Course Item -->
+					<div class="row course_boxes">
+						<div class="col-lg-4 course_box">
+							<div class="card" style="width: 300px">
+								<img class="card-img-top img-fluid p-2" src="<%=result[i].postImage%>" alt="https://unsplash.com/@cikstefan">
+								<div class="card-body text-center">
+									<div class="card-title"><a href="#"><%=result[i].title%></a></div>
+									<div class="card-text"><%-result[i].summary.slice(0, 80)%>......</div>
+								</div>
+								<div class="price_box d-flex flex-row align-items-center">
+
+									<div class="course_author_name" style="font-size: 20px;"><b><a style="color:#ffb606" href="/videos/<%=result[i].link%>"> START LESSON </a> </b></div>
+									<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>##</span></div>
+								</div>
+							</div>
+						</div>
+						
+				<% }%>
+
+
+
+					</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
