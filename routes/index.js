@@ -5,6 +5,7 @@ const passport = require("passport");
 const bcrypt = require("bcrypt-nodejs");
 const multer =require("multer");
 const fs = require('fs');
+const fse = require('fs-extra');
 
 let User = require("../models/users");
 let Lecture = require("../models/lectures")
@@ -206,16 +207,8 @@ router.delete("/dashboard/lectures/delete/:id", isLoggedIn, async function (req,
     res.redirect("/dashboard/lectures");
 });
 
-// //get Test Result
-router.get("/dashboard/testresult", isLoggedIn, async function(req, res, next){
-  let username = req.user.name;
-  let result = "";
-  result = await Result.find({});
 
-  res.render("backend/testresult", {result, username})
-})
-
-router.post("/dashboard/testresult/post", isLoggedIn, function(req, res, next){
+router.post("/dashboard/testresult/post", function(req, res, next){
   let resultData = {
             name: req.body.username,
             score: req.body.userscore,
@@ -228,6 +221,16 @@ router.post("/dashboard/testresult/post", isLoggedIn, function(req, res, next){
             });
       
 })
+
+// //get Test Result
+router.get("/dashboard/testresult", isLoggedIn, async function(req, res, next){
+  let username = req.user.name;
+  let result = "";
+  result = await Result.find({});
+
+  res.render("backend/testresult", {result, username})
+})
+
 
 //Backend Videos
 router.get("/dashboard/videos", isLoggedIn, async function(req, res, next){
